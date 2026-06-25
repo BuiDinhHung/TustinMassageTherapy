@@ -23,10 +23,12 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-padding-top: var(--header-height);
 }
 
 body {
   margin: 0;
+  padding-top: var(--header-height);
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--ivory);
   color: var(--ink);
@@ -106,8 +108,10 @@ h3 {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
   height: var(--header-height);
   display: grid;
