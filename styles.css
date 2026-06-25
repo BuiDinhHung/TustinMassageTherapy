@@ -133,16 +133,13 @@ h3 {
 }
 
 .brand-mark {
-  display: grid;
+  display: block;
   width: 38px;
   height: 38px;
-  place-items: center;
   border-radius: 50%;
+  object-fit: cover;
   background: var(--sage);
-  color: var(--ivory);
-  font-family: "Inter", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
+  flex-shrink: 0;
 }
 
 .site-nav {
