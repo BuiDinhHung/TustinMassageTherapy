@@ -115,9 +115,10 @@ h3 {
   align-items: center;
   gap: 28px;
   padding: 0 clamp(18px, 4vw, 56px);
-  background: rgba(251, 247, 239, 0.88);
+  background: rgba(251, 247, 239, 0.96);
   border-bottom: 1px solid rgba(124, 99, 74, 0.14);
   backdrop-filter: blur(18px);
+  box-shadow: 0 6px 24px rgba(65, 45, 31, 0.08);
 }
 
 .brand {
@@ -134,8 +135,8 @@ h3 {
 
 .brand-mark {
   display: block;
-  width: 38px;
-  height: 38px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   object-fit: cover;
   background: var(--sage);
@@ -720,6 +721,16 @@ h3 {
   gap: 30px;
 }
 
+.footer-logo {
+  display: block;
+  width: 84px;
+  height: 84px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--sage);
+}
+
 .site-footer h2,
 .site-footer h3 {
   margin-bottom: 14px;
@@ -1030,8 +1041,8 @@ h3 {
   }
 
   .brand-mark {
-    width: 36px;
-    height: 36px;
+    width: 46px;
+    height: 46px;
   }
 
   .brand span:last-child {
