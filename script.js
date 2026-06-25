@@ -1,5 +1,14 @@
 const body = document.body;
+const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector(".nav-toggle");
+
+if (header) {
+  const onScroll = () => {
+    header.classList.toggle("is-scrolled", window.scrollY > 10);
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+}
 const navLinks = document.querySelectorAll(".site-nav a");
 const year = document.querySelector("#year");
 

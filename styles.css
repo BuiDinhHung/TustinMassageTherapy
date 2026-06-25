@@ -28,7 +28,6 @@ html {
 
 body {
   margin: 0;
-  padding-top: var(--header-height);
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--ivory);
   color: var(--ink);
@@ -119,10 +118,30 @@ h3 {
   align-items: center;
   gap: 28px;
   padding: 0 clamp(18px, 4vw, 56px);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  transition: background 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+}
+
+.site-header.is-scrolled {
   background: rgba(251, 247, 239, 0.96);
-  border-bottom: 1px solid rgba(124, 99, 74, 0.14);
+  border-bottom-color: rgba(124, 99, 74, 0.14);
   backdrop-filter: blur(18px);
   box-shadow: 0 6px 24px rgba(65, 45, 31, 0.08);
+}
+
+/* Light text while transparent over the hero */
+.site-header:not(.is-scrolled) .brand {
+  color: var(--white);
+}
+
+.site-header:not(.is-scrolled) .site-nav {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.site-header:not(.is-scrolled) .nav-toggle span:not(.sr-only) {
+  background: var(--white);
 }
 
 .brand {
@@ -269,7 +288,7 @@ h3 {
 
 .hero {
   position: relative;
-  min-height: calc(100svh - var(--header-height));
+  min-height: 100svh;
   display: grid;
   align-items: center;
   overflow: hidden;
@@ -902,7 +921,7 @@ h3 {
   }
 
   .hero {
-    min-height: min(820px, calc(100svh - var(--header-height)));
+    min-height: min(820px, 100svh);
     background-position: 54% center;
   }
 
