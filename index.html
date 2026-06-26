@@ -19,15 +19,15 @@
       property="og:image"
       content="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=85"
     >
-    <meta name="theme-color" content="#6f7f61">
+    <meta name="theme-color" content="#b3766f">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=12">
 
     <script type="application/ld+json">
       {
@@ -92,87 +92,111 @@
   </head>
   <body>
     <header class="site-header" data-header>
-      <a class="brand" href="#home" aria-label="Tustin Massage Therapy home">
-        <img class="brand-mark" src="logo.png" alt="Tustin Massage Therapy logo" width="56" height="56" />
-        <span>Tustin Massage Therapy</span>
-      </a>
+      <div class="header-inner">
+        <a class="brand" href="#home" aria-label="Tustin Massage Therapy home">
+          <img class="brand-mark" src="logo.png" alt="Tustin Massage Therapy logo" width="72" height="72" />
+          <span>Tustin Massage Therapy</span>
+        </a>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span class="sr-only">Toggle navigation</span>
-      </button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
 
-      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
-      </nav>
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-      <a class="button button-small header-cta" href="mailto:Tustinmassage2026@yahoo.com?subject=Appointment%20Request&body=Hello%20Tustin%20Massage%20Therapy%2C%0A%0AI%20would%20like%20to%20book%20a%20massage%20appointment.%0A%0APreferred%20date%20and%20time%3A%0AService%3A%0AName%3A%0APhone%3A">
-        Book Appointment
-      </a>
+        <a class="button button-small header-cta" href="mailto:Tustinmassage2026@yahoo.com?subject=Appointment%20Request&body=Hello%20Tustin%20Massage%20Therapy%2C%0A%0AI%20would%20like%20to%20book%20a%20massage%20appointment.%0A%0APreferred%20date%20and%20time%3A%0AService%3A%0AName%3A%0APhone%3A">
+          Book
+        </a>
+      </div>
     </header>
 
     <main>
       <section class="hero" id="home" aria-label="Tustin Massage Therapy hero">
         <div class="hero-overlay"></div>
+        <div class="hero-ornament" aria-hidden="true"></div>
         <div class="hero-content reveal">
-          <p class="eyebrow">Tustin, California Massage Spa</p>
-          <h1>Relax Your Body. Refresh Your Mind.</h1>
-          <p class="hero-copy">Professional massage therapy in Tustin, California.</p>
+          <p class="eyebrow">Massage Spa in Tustin</p>
+          <h1>Tustin Massage Therapy</h1>
+          <p class="hero-script">Relax your body</p>
+          <p class="hero-strong">Refresh your mind</p>
+          <p class="hero-copy">Professional full body massage and oil massage in Tustin, California.</p>
           <div class="hero-actions">
             <a class="button" href="mailto:Tustinmassage2026@yahoo.com?subject=Appointment%20Request&body=Hello%20Tustin%20Massage%20Therapy%2C%0A%0AI%20would%20like%20to%20book%20a%20massage%20appointment.%0A%0APreferred%20date%20and%20time%3A%0AService%3A%0AName%3A%0APhone%3A">
               Book Appointment
             </a>
             <a class="button button-ghost" href="#services">View Services</a>
           </div>
+          <div class="hero-dots" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </section>
 
       <section class="section about-section" id="about">
-        <div class="container about-grid">
-          <div class="section-copy reveal">
-            <p class="eyebrow">Welcome</p>
-            <h2>Welcome to Tustin Massage Therapy</h2>
+        <div class="container about-ria-layout">
+          <div class="about-ria-copy reveal">
+            <p class="section-kicker">Introduction to</p>
+            <h2>Tustin Massage Therapy</h2>
             <p>
               At Tustin Massage Therapy, we provide professional massage services in a peaceful and relaxing environment.
               Whether you need stress relief, muscle recovery, or a quiet moment to recharge, our therapists are here to
               help you feel refreshed and restored.
             </p>
+            <div class="about-actions">
+              <a class="button" href="#services">View Services</a>
+              <a
+                class="button button-light"
+                href="https://www.google.com/maps/search/?api=1&query=1131%20E%20Main%20St.%20%23107%2C%20Tustin%2C%20CA%2092780"
+                target="_blank"
+                rel="noopener"
+              >
+                Google Map
+              </a>
+            </div>
+            <div class="about-info-list" aria-label="Business details">
+              <p><span>Address</span>1131 E Main St. #107, Tustin, CA 92780</p>
+              <p><span>Email</span>Tustinmassage2026@yahoo.com</p>
+            </div>
           </div>
 
-          <div class="about-media reveal">
+          <div class="about-ria-media reveal">
             <img
               src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1000&q=80"
               alt="A calm spa treatment room with folded towels and warm light"
             >
+            <div class="about-photo-note">
+              <strong>Open Daily</strong>
+              <span>9:30 AM - 9:00 PM</span>
+            </div>
           </div>
 
-          <div class="feature-grid reveal">
-            <article class="feature-card">
-              <span>01</span>
-              <h3>Professional Therapists</h3>
-              <p>Careful, attentive massage therapy for deep relaxation and renewal.</p>
+          <div class="ria-feature-row reveal">
+            <article class="feature-item">
+              <h3 class="feature-title">Professional Therapists</h3>
+              <p class="feature-desc">Skilled, caring hands.</p>
             </article>
-            <article class="feature-card">
-              <span>02</span>
-              <h3>Relaxing Atmosphere</h3>
-              <p>Warm rooms, soft textures, and a quiet setting made for unwinding.</p>
+            <article class="feature-item">
+              <h3 class="feature-title">Relaxing Atmosphere</h3>
+              <p class="feature-desc">Calm, soothing space.</p>
             </article>
-            <article class="feature-card">
-              <span>03</span>
-              <h3>Open 7 Days</h3>
-              <p>Appointments available every day from morning through evening.</p>
+            <article class="feature-item">
+              <h3 class="feature-title">Open 7 Days</h3>
+              <p class="feature-desc">Daily, 9:30 AM – 9 PM.</p>
             </article>
-            <article class="feature-card">
-              <span>04</span>
-              <h3>Convenient Location</h3>
-              <p>Visit us at 1131 E Main St. #107 in Tustin, CA.</p>
+            <article class="feature-item">
+              <h3 class="feature-title">Convenient Location</h3>
+              <p class="feature-desc">In the heart of Tustin.</p>
             </article>
           </div>
         </div>
@@ -197,45 +221,55 @@
 
       <section class="section services-section" id="services">
         <div class="container">
-          <div class="section-heading reveal">
-            <p class="eyebrow">Services &amp; Pricing</p>
-            <h2>Massage services for recovery, balance, and deep rest.</h2>
+          <div class="ria-section-heading reveal">
+            <p class="section-kicker">Menu Tustin Massage Therapy</p>
+            <h2>Massage Menu</h2>
             <p>Full body massage and oil massage treatments in a calm, professional setting.</p>
           </div>
 
-          <div class="pricing-grid">
-            <article class="price-card reveal">
-              <div class="price-card-header">
-                <p>Relaxation</p>
+          <div class="ria-service-list">
+            <article class="ria-service-card reveal">
+              <div class="ria-service-images">
+                <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=80" alt="Relaxing Swedish massage treatment">
+                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80" alt="Massage oil prepared for a relaxing treatment">
+              </div>
+              <div class="ria-service-copy">
+                <p class="eyebrow">Relaxation</p>
                 <h3>Swedish Massage</h3>
+                <ul class="ria-price-list">
+                  <li><span>30 min</span><strong>$50</strong></li>
+                  <li><span>60 min</span><strong>$70</strong></li>
+                  <li><span>90 min</span><strong>$100</strong></li>
+                  <li><span>120 min</span><strong>$130</strong></li>
+                </ul>
+                <a class="direction-link" href="#contact">Book this service</a>
               </div>
-              <ul class="price-list">
-                <li><span>30 min</span><strong>$50</strong></li>
-                <li><span>60 min</span><strong>$70</strong></li>
-                <li><span>90 min</span><strong>$100</strong></li>
-                <li><span>120 min</span><strong>$130</strong></li>
-              </ul>
             </article>
 
-            <article class="price-card price-card-featured reveal">
-              <div class="price-card-header">
-                <p>Deep Relief</p>
+            <article class="ria-service-card ria-service-card-alt reveal">
+              <div class="ria-service-images">
+                <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=80" alt="Deep tissue and hot stone massage treatment">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80" alt="Oil massage treatment in a peaceful spa room">
+              </div>
+              <div class="ria-service-copy">
+                <p class="eyebrow">Deep Relief</p>
                 <h3>Deep Tissue Massage</h3>
+                <ul class="ria-price-list">
+                  <li><span>30 min</span><strong>$70</strong></li>
+                  <li><span>60 min</span><strong>$90</strong></li>
+                  <li><span>90 min</span><strong>$130</strong></li>
+                  <li><span>120 min</span><strong>$170</strong></li>
+                </ul>
+                <a class="direction-link" href="#contact">Book this service</a>
               </div>
-              <ul class="price-list">
-                <li><span>30 min</span><strong>$70</strong></li>
-                <li><span>60 min</span><strong>$90</strong></li>
-                <li><span>90 min</span><strong>$130</strong></li>
-                <li><span>120 min</span><strong>$170</strong></li>
-              </ul>
             </article>
 
-            <article class="price-card reveal">
-              <div class="price-card-header">
-                <p>Enhancements</p>
+            <article class="ria-addon-menu reveal">
+              <div>
+                <p class="eyebrow">Enhancements</p>
                 <h3>Add-ons</h3>
               </div>
-              <ul class="price-list">
+              <ul class="ria-addon-list">
                 <li><span>Hot Stone</span><strong>$20</strong></li>
                 <li><span>Paraffin Treatment</span><strong>$20</strong></li>
                 <li><span>Foot Scrub</span><strong>$20</strong></li>
@@ -250,20 +284,26 @@
         <div class="container">
           <div class="section-heading reveal">
             <p class="eyebrow">Gallery</p>
-            <h2>A quiet space for full body massage, oil massage, and restorative care.</h2>
+            <h2>Massage care in a calm spa space.</h2>
           </div>
 
           <div class="gallery-grid">
-            <figure class="gallery-item gallery-large reveal">
+            <figure class="gallery-item reveal">
               <img
-                src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1200&q=80"
-                alt="Hot stone massage treatment in a relaxing spa room"
+                src="https://images.unsplash.com/photo-1700522924565-9fad1c05469e?auto=format&fit=crop&w=900&q=80"
+                alt="Massage therapist providing a full body massage in a calm spa room"
               >
             </figure>
             <figure class="gallery-item reveal">
               <img
-                src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=80"
-                alt="Massage therapist providing a relaxing full body massage"
+                src="https://images.unsplash.com/photo-1745327883508-b6cd32e5dde5?auto=format&fit=crop&w=900&q=80"
+                alt="Close up of a relaxing back massage treatment"
+              >
+            </figure>
+            <figure class="gallery-item reveal">
+              <img
+                src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=80"
+                alt="Hot stone massage treatment in a relaxing spa room"
               >
             </figure>
             <figure class="gallery-item reveal">
@@ -274,14 +314,8 @@
             </figure>
             <figure class="gallery-item reveal">
               <img
-                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80"
-                alt="Clean spa towel, lotion, candle, and flowers prepared for a massage appointment"
-              >
-            </figure>
-            <figure class="gallery-item gallery-tall reveal">
-              <img
-                src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=900&q=80"
-                alt="Warm and relaxing spa lounge environment with soft seating and plants"
+                src="https://images.unsplash.com/photo-1728497872660-cc6b16238c3a?auto=format&fit=crop&w=900&q=80"
+                alt="Foot massage treatment with warm natural light"
               >
             </figure>
             <figure class="gallery-item reveal">
@@ -403,6 +437,22 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Relaxing background music: plays audio/relax.mp3 if present, else a soft generated melody -->
+    <audio id="ambient-audio" loop preload="auto" src="audio/relax.mp3"></audio>
+    <button
+      id="music-toggle"
+      class="music-toggle"
+      type="button"
+      aria-pressed="false"
+      aria-label="Play relaxing music"
+      title="Relaxing music"
+    >
+      <span class="music-toggle-icon" aria-hidden="true">
+        <i></i><i></i><i></i><i></i>
+      </span>
+      <span class="sr-only">Toggle relaxing music</span>
+    </button>
+
+    <script src="script.js?v=5"></script>
   </body>
 </html>
