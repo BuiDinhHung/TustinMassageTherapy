@@ -247,8 +247,11 @@ section[id] {
   border-radius: 999px;
   background: var(--sage);
   color: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1;
+  cursor: pointer;
   box-shadow: 0 12px 30px rgba(200, 150, 140, 0.3);
   transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
 }
@@ -810,27 +813,32 @@ section[id] {
   gap: 10px;
 }
 
-.floating-ctas a {
+.floating-ctas a,
+.floating-ctas button {
   min-width: 96px;
   padding: 12px 16px;
   border: 1px solid rgba(255, 255, 255, 0.46);
   border-radius: 999px;
   background: rgba(92, 74, 63, 0.9);
   color: var(--white);
+  font-family: inherit;
   font-size: 0.84rem;
   font-weight: 800;
   text-align: center;
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(14px);
+  cursor: pointer;
   transition: transform 220ms ease, background 220ms ease;
 }
 
-.floating-ctas a:first-child {
+.floating-ctas > :first-child {
   background: var(--sage);
 }
 
 .floating-ctas a:hover,
-.floating-ctas a:focus-visible {
+.floating-ctas a:focus-visible,
+.floating-ctas button:hover,
+.floating-ctas button:focus-visible {
   background: var(--sage-dark);
   transform: translateY(-2px);
 }
@@ -1182,7 +1190,8 @@ section[id] {
     gap: 8px;
   }
 
-  .floating-ctas a {
+  .floating-ctas a,
+  .floating-ctas button {
     width: auto;
     min-width: 0;
     padding: 11px 8px;
@@ -1726,7 +1735,8 @@ body {
   gap: 14px;
 }
 
-.floating-ctas a {
+.floating-ctas a,
+.floating-ctas button {
   display: grid;
   width: 68px;
   min-width: 68px;
@@ -1737,7 +1747,7 @@ body {
   box-shadow: 0 10px 0 rgba(184, 124, 118, 0.2), 0 18px 38px rgba(55, 34, 20, 0.2);
 }
 
-.floating-ctas a:first-child {
+.floating-ctas > :first-child {
   background: #d3ad89;
 }
 
@@ -1913,7 +1923,8 @@ body {
     margin: 28px auto;
   }
 
-  .floating-ctas a {
+  .floating-ctas a,
+  .floating-ctas button {
     width: auto;
     min-width: 0;
     height: 48px;
@@ -2297,11 +2308,13 @@ h3 {
 }
 
 /* --- Floating CTAs: soft breathing pulse on the primary --------------- */
-.floating-ctas a {
+.floating-ctas a,
+.floating-ctas button {
   transition: transform 260ms ease, box-shadow 260ms ease, background 260ms ease;
 }
 
-.floating-ctas a:hover {
+.floating-ctas a:hover,
+.floating-ctas button:hover {
   transform: translateY(-4px) scale(1.05);
 }
 
@@ -2703,5 +2716,16 @@ p {
   .about-section::before,
   .services-section::after {
     display: none;
+  }
+}
+
+/* --- Touch devices: no sticky :hover so a single tap fires the button --- */
+@media (hover: none) {
+  .button:hover,
+  .button-ghost:hover,
+  .floating-ctas a:hover,
+  .floating-ctas button:hover,
+  .booking-phone:hover {
+    transform: none;
   }
 }
