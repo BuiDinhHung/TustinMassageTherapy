@@ -2451,6 +2451,108 @@ p {
   }
 }
 
+/* --- Booking modal ---------------------------------------------------- */
+.booking-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.booking-modal[hidden] {
+  display: none;
+}
+
+.booking-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(60, 40, 38, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+.booking-dialog {
+  position: relative;
+  width: min(440px, 100%);
+  background: var(--ivory);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 40px 32px 32px;
+  text-align: center;
+  animation: booking-pop 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes booking-pop {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.booking-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--brown-soft);
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.booking-close:hover {
+  color: var(--brown);
+}
+
+.booking-dialog h2 {
+  margin: 6px 0 12px;
+}
+
+.booking-copy {
+  color: var(--brown-soft);
+  margin: 0 0 20px;
+}
+
+.booking-phone {
+  display: inline-block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 6vw, 2.6rem);
+  font-weight: 600;
+  color: var(--sage-dark);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  margin-bottom: 22px;
+}
+
+.booking-phone:hover {
+  color: var(--brown);
+}
+
+.booking-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.booking-actions .button {
+  flex: 1 1 150px;
+}
+
+.booking-hours {
+  margin: 20px 0 0;
+  font-size: 0.85rem;
+  color: var(--brown-soft);
+}
+
 /* --- Relaxing background-music toggle --------------------------------- */
 .music-toggle {
   position: fixed;

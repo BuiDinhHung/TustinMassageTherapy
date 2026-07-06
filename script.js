@@ -142,6 +142,44 @@ if (!prefersReducedMotion) {
 }
 
 /* ---------------------------------------------------------------------------
+   Booking modal: any "Book" button opens a popup showing the phone number so
+   visitors can call to reserve. Falls back to the mailto href if JS is off.
+--------------------------------------------------------------------------- */
+const bookingModal = document.getElementById("booking-modal");
+const bookTriggers = document.querySelectorAll("[data-book]");
+
+if (bookingModal && bookTriggers.length) {
+  let lastFocused = null;
+
+  const openBooking = (event) => {
+    event.preventDefault();
+    lastFocused = event.currentTarget;
+    bookingModal.hidden = false;
+    body.classList.add("booking-open");
+    const focusTarget = bookingModal.querySelector(".booking-phone");
+    if (focusTarget) focusTarget.focus();
+  };
+
+  const closeBooking = () => {
+    bookingModal.hidden = true;
+    body.classList.remove("booking-open");
+    if (lastFocused) lastFocused.focus();
+  };
+
+  bookTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", openBooking);
+  });
+
+  bookingModal.querySelectorAll("[data-book-close]").forEach((el) => {
+    el.addEventListener("click", closeBooking);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !bookingModal.hidden) closeBooking();
+  });
+}
+
+/* ---------------------------------------------------------------------------
    Relaxing background music.
    - Plays a local track at audio/relax.mp3 when it is present — drop your own
      licensed / royalty-free song there to use it.

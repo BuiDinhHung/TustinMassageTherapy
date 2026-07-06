@@ -27,7 +27,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="styles.css?v=12">
+    <link rel="stylesheet" href="styles.css?v=13">
 
     <script type="application/ld+json">
       {
@@ -44,6 +44,7 @@
           "addressCountry": "US"
         },
         "email": "Tustinmassage2026@yahoo.com",
+        "telephone": "+1-714-698-3484",
         "priceRange": "$$",
         "openingHoursSpecification": [
           {
@@ -114,7 +115,7 @@
           <a href="#contact">Contact</a>
         </nav>
 
-        <a class="button button-small header-cta" href="mailto:Tustinmassage2026@yahoo.com?subject=Appointment%20Request&body=Hello%20Tustin%20Massage%20Therapy%2C%0A%0AI%20would%20like%20to%20book%20a%20massage%20appointment.%0A%0APreferred%20date%20and%20time%3A%0AService%3A%0AName%3A%0APhone%3A">
+        <a class="button button-small header-cta" data-book href="mailto:Tustinmassage2026@yahoo.com?subject=Appointment%20Request&body=Hello%20Tustin%20Massage%20Therapy%2C%0A%0AI%20would%20like%20to%20book%20a%20massage%20appointment.%0A%0APreferred%20date%20and%20time%3A%0AService%3A%0AName%3A%0APhone%3A">
           Book
         </a>
       </div>
@@ -131,7 +132,7 @@
           <p class="hero-strong">Refresh your mind</p>
           <p class="hero-copy">Professional full body massage and oil massage in Tustin, California.</p>
           <div class="hero-actions">
-            <a class="button" href="mailto:Tustinmassage2026@yahoo.com?subject=Appointment%20Request&body=Hello%20Tustin%20Massage%20Therapy%2C%0A%0AI%20would%20like%20to%20book%20a%20massage%20appointment.%0A%0APreferred%20date%20and%20time%3A%0AService%3A%0AName%3A%0APhone%3A">
+            <a class="button" data-book href="mailto:Tustinmassage2026@yahoo.com?subject=Appointment%20Request&body=Hello%20Tustin%20Massage%20Therapy%2C%0A%0AI%20would%20like%20to%20book%20a%20massage%20appointment.%0A%0APreferred%20date%20and%20time%3A%0AService%3A%0AName%3A%0APhone%3A">
               Book Appointment
             </a>
             <a class="button button-ghost" href="#services">View Services</a>
@@ -364,6 +365,10 @@
                 <dd>1131 E Main St. #107, Tustin, CA 92780</dd>
               </div>
               <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+17146983484">(714) 698-3484</a></dd>
+              </div>
+              <div>
                 <dt>Email</dt>
                 <dd><a href="mailto:Tustinmassage2026@yahoo.com">Tustinmassage2026@yahoo.com</a></dd>
               </div>
@@ -383,7 +388,7 @@
                 Get Directions
               </a>
               <a class="button button-light" href="mailto:Tustinmassage2026@yahoo.com">Email Us</a>
-              <a class="button button-ghost-dark" href="mailto:Tustinmassage2026@yahoo.com?subject=Appointment%20Request&body=Hello%20Tustin%20Massage%20Therapy%2C%0A%0AI%20would%20like%20to%20book%20a%20massage%20appointment.%0A%0APreferred%20date%20and%20time%3A%0AService%3A%0AName%3A%0APhone%3A">
+              <a class="button button-ghost-dark" data-book href="mailto:Tustinmassage2026@yahoo.com?subject=Appointment%20Request&body=Hello%20Tustin%20Massage%20Therapy%2C%0A%0AI%20would%20like%20to%20book%20a%20massage%20appointment.%0A%0APreferred%20date%20and%20time%3A%0AService%3A%0AName%3A%0APhone%3A">
                 Book Appointment
               </a>
             </div>
@@ -402,9 +407,25 @@
       </section>
     </main>
 
+    <div class="booking-modal" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" hidden>
+      <div class="booking-backdrop" data-book-close></div>
+      <div class="booking-dialog reveal is-visible" role="document">
+        <button class="booking-close" type="button" data-book-close aria-label="Close">&times;</button>
+        <p class="eyebrow">Book an Appointment</p>
+        <h2 id="booking-modal-title">Call to reserve your time</h2>
+        <p class="booking-copy">Tap the number below to call and book your massage, or send us an email request.</p>
+        <a class="booking-phone" href="tel:+17146983484">(714) 698-3484</a>
+        <div class="booking-actions">
+          <a class="button" href="tel:+17146983484">Call Now</a>
+          <a class="button button-light" href="mailto:Tustinmassage2026@yahoo.com?subject=Appointment%20Request&body=Hello%20Tustin%20Massage%20Therapy%2C%0A%0AI%20would%20like%20to%20book%20a%20massage%20appointment.%0A%0APreferred%20date%20and%20time%3A%0AService%3A%0AName%3A%0APhone%3A">Email Request</a>
+        </div>
+        <p class="booking-hours">Open 7 days a week, 9:30 AM &ndash; 9:00 PM</p>
+      </div>
+    </div>
+
     <div class="floating-ctas" aria-label="Quick contact actions">
-      <a href="mailto:Tustinmassage2026@yahoo.com?subject=Appointment%20Request&body=Hello%20Tustin%20Massage%20Therapy%2C%0A%0AI%20would%20like%20to%20book%20a%20massage%20appointment.%0A%0APreferred%20date%20and%20time%3A%0AService%3A%0AName%3A%0APhone%3A">Book</a>
-      <a href="#contact">Call</a>
+      <a data-book href="mailto:Tustinmassage2026@yahoo.com?subject=Appointment%20Request&body=Hello%20Tustin%20Massage%20Therapy%2C%0A%0AI%20would%20like%20to%20book%20a%20massage%20appointment.%0A%0APreferred%20date%20and%20time%3A%0AService%3A%0AName%3A%0APhone%3A">Book</a>
+      <a href="tel:+17146983484">Call</a>
       <a href="mailto:Tustinmassage2026@yahoo.com">Email</a>
     </div>
 
@@ -453,6 +474,6 @@
       <span class="sr-only">Toggle relaxing music</span>
     </button>
 
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=6"></script>
   </body>
 </html>
