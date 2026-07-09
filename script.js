@@ -180,6 +180,42 @@ if (bookingModal && bookTriggers.length) {
 }
 
 /* ---------------------------------------------------------------------------
+   Grand-opening promo popup: shows the sale banner shortly after the page
+   loads. Closes via the X button, the backdrop, or the Escape key; tapping
+   the banner itself opens the booking modal.
+--------------------------------------------------------------------------- */
+const promoModal = document.getElementById("promo-modal");
+
+if (promoModal) {
+  const closePromo = () => {
+    promoModal.hidden = true;
+  };
+
+  const openPromo = () => {
+    promoModal.hidden = false;
+    const closeButton = promoModal.querySelector(".promo-close");
+    if (closeButton) closeButton.focus();
+  };
+
+  promoModal.querySelectorAll("[data-promo-close]").forEach((el) => {
+    el.addEventListener("click", closePromo);
+  });
+
+  /* The banner is also a "Book" trigger — close the promo so the booking
+     modal appears on top without the sale popup lingering behind it. */
+  const promoBanner = promoModal.querySelector(".promo-banner-button");
+  if (promoBanner) {
+    promoBanner.addEventListener("click", closePromo);
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !promoModal.hidden) closePromo();
+  });
+
+  window.setTimeout(openPromo, 600);
+}
+
+/* ---------------------------------------------------------------------------
    Relaxing background music.
    - Plays a local track at audio/relax.mp3 when it is present — drop your own
      licensed / royalty-free song there to use it.
