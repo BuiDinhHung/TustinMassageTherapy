@@ -20,6 +20,12 @@
   box-sizing: border-box;
 }
 
+/* Instant taps on touch: no double-tap-zoom wait that can swallow a tap */
+a,
+button {
+  touch-action: manipulation;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
