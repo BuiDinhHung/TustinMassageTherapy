@@ -154,11 +154,63 @@ const isInAppBrowser = /zalo|fban|fbav|fb_iab|instagram|line\//i.test(
   navigator.userAgent
 );
 
+const isIOSSafari =
+  /iPad|iPhone|iPod/i.test(navigator.userAgent) &&
+  /WebKit/i.test(navigator.userAgent) &&
+  !/CriOS|FxiOS|EdgiOS|OPiOS/i.test(navigator.userAgent);
+
 if (isInAppBrowser) {
   document.querySelectorAll("a[href^='tel:']").forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
       window.location.href = link.getAttribute("href");
+    });
+  });
+}
+
+/*
+   Some iOS Safari versions can lose the synthetic click on a styled tel link,
+   while long-press still exposes the native Call menu. Handle a short,
+   stationary touch directly; moved touches remain available for scrolling.
+*/
+if (isIOSSafari) {
+  document.querySelectorAll("a[href^='tel:']").forEach((link) => {
+    let touchStart = null;
+
+    link.addEventListener(
+      "touchstart",
+      (event) => {
+        const touch = event.changedTouches[0];
+        touchStart = touch
+          ? { x: touch.clientX, y: touch.clientY, time: Date.now() }
+          : null;
+      },
+      { passive: true }
+    );
+
+    link.addEventListener(
+      "touchend",
+      (event) => {
+        const touch = event.changedTouches[0];
+        if (!touchStart || !touch) return;
+
+        const moved = Math.hypot(
+          touch.clientX - touchStart.x,
+          touch.clientY - touchStart.y
+        );
+        const held = Date.now() - touchStart.time;
+        touchStart = null;
+
+        if (moved > 12 || held > 700) return;
+
+        event.preventDefault();
+        window.location.href = link.getAttribute("href");
+      },
+      { passive: false }
+    );
+
+    link.addEventListener("touchcancel", () => {
+      touchStart = null;
     });
   });
 }
