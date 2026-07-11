@@ -144,8 +144,11 @@ if (!prefersReducedMotion) {
 /* ---------------------------------------------------------------------------
    Phone links: plain anchors everywhere (iOS Safari needs the native tap).
    In-app browsers only (Zalo / Messenger / Instagram) sometimes swallow the
-   anchor's default navigation, so there — and only there — we also nudge
-   window.location. No preventDefault, so the native path always runs first.
+   anchor's default navigation, so there — and only there — we drive the
+   dial ourselves via window.location. We preventDefault first so the native
+   navigation and our JS navigation don't fire together and race each other
+   (that race is what made a single tap silently do nothing, leaving only
+   long-press's native "Call" menu working).
 --------------------------------------------------------------------------- */
 const isInAppBrowser = /zalo|fban|fbav|fb_iab|instagram|line\//i.test(
   navigator.userAgent
@@ -153,7 +156,8 @@ const isInAppBrowser = /zalo|fban|fbav|fb_iab|instagram|line\//i.test(
 
 if (isInAppBrowser) {
   document.querySelectorAll("a[href^='tel:']").forEach((link) => {
-    link.addEventListener("click", () => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
       window.location.href = link.getAttribute("href");
     });
   });
