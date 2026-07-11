@@ -142,6 +142,24 @@ if (!prefersReducedMotion) {
 }
 
 /* ---------------------------------------------------------------------------
+   Phone links: plain anchors everywhere (iOS Safari needs the native tap).
+   In-app browsers only (Zalo / Messenger / Instagram) sometimes swallow the
+   anchor's default navigation, so there — and only there — we also nudge
+   window.location. No preventDefault, so the native path always runs first.
+--------------------------------------------------------------------------- */
+const isInAppBrowser = /zalo|fban|fbav|fb_iab|instagram|line\//i.test(
+  navigator.userAgent
+);
+
+if (isInAppBrowser) {
+  document.querySelectorAll("a[href^='tel:']").forEach((link) => {
+    link.addEventListener("click", () => {
+      window.location.href = link.getAttribute("href");
+    });
+  });
+}
+
+/* ---------------------------------------------------------------------------
    Booking modal: any "Book" button opens a popup showing the phone number so
    visitors can call to reserve. Falls back to the mailto href if JS is off.
 --------------------------------------------------------------------------- */
