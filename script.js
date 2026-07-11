@@ -465,14 +465,8 @@ if (musicToggle) {
     }
   });
 
-  if (recall() !== "off") {
-    const events = ["pointerdown", "keydown", "touchstart", "wheel", "scroll"];
-    const startOnce = () => {
-      if (!isOn && recall() !== "off") start();
-      events.forEach((evt) => window.removeEventListener(evt, startOnce));
-    };
-    events.forEach((evt) =>
-      window.addEventListener(evt, startOnce, { passive: true })
-    );
-  }
+  /* Safari reserves a user's tap for one privileged action. Starting audio
+     from a global touch listener can consume the same gesture used by a
+     telephone link, especially when WebCake embeds the page in an iframe.
+     Music therefore starts only from the dedicated music button above. */
 }
