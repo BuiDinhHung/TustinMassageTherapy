@@ -26,6 +26,10 @@ button {
   touch-action: manipulation;
 }
 
+a[href^="tel:"] {
+  -webkit-tap-highlight-color: rgba(179, 118, 111, 0.22);
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;

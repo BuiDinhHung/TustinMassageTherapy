@@ -150,26 +150,8 @@ if (!prefersReducedMotion) {
    (that race is what made a single tap silently do nothing, leaving only
    long-press's native "Call" menu working).
 --------------------------------------------------------------------------- */
-const isInAppBrowser = /zalo|fban|fbav|fb_iab|instagram|line\//i.test(
-  navigator.userAgent
-);
-
-if (isInAppBrowser) {
-  document.querySelectorAll("a[href^='tel:']").forEach((link) => {
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      window.location.href = link.getAttribute("href");
-    });
-  });
-}
-
-/* Use a real button action for the modal CTA so Safari doesn't have to
-   interpret a styled telephone anchor. */
-document.querySelectorAll("[data-call]").forEach((button) => {
-  button.addEventListener("click", () => {
-    window.location.assign(`tel:${button.dataset.call}`);
-  });
-});
+/* Telephone actions stay as native <a href="tel:..."> links. Safari/iOS
+   needs the telephone URL to come directly from the user's tap. */
 
 /* ---------------------------------------------------------------------------
    Booking modal: any "Book" button opens a popup showing the phone number so
