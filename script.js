@@ -142,19 +142,6 @@ if (!prefersReducedMotion) {
 }
 
 /* ---------------------------------------------------------------------------
-   Phone links: dial through window.location instead of the default anchor
-   navigation. In-app browsers (Zalo / Messenger / Facebook / Instagram)
-   often ignore a tapped tel: anchor — forcing users to long-press — but they
-   do honor a location change. Regular browsers behave the same either way.
---------------------------------------------------------------------------- */
-document.querySelectorAll("a[href^='tel:']").forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    window.location.href = link.getAttribute("href");
-  });
-});
-
-/* ---------------------------------------------------------------------------
    Booking modal: any "Book" button opens a popup showing the phone number so
    visitors can call to reserve. Falls back to the mailto href if JS is off.
 --------------------------------------------------------------------------- */
