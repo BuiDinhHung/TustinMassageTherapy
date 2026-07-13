@@ -2420,6 +2420,23 @@ h3 {
   font-size: 0.98rem;
 }
 
+.ria-price-list .price-tier {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.ria-price-list .price-tier small {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--sage-dark);
+}
+
+.ria-service-card-alt .ria-price-list .price-tier small {
+  color: rgba(255, 255, 255, 0.88);
+}
+
 /* Gentle, readable paragraphs */
 p {
   letter-spacing: var(--tracking-soft);
