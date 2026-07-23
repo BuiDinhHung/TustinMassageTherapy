@@ -925,6 +925,38 @@ section[id] {
   color: var(--white);
 }
 
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.footer-social .social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.97);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: background 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-social .social-link svg {
+  flex-shrink: 0;
+}
+
+.footer-social .social-link:hover {
+  background: var(--white);
+  color: #9c857f;
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
 .footer-bottom {
   margin-top: 40px;
   padding: 20px;
